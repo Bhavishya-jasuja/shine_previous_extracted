@@ -1,0 +1,2432 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Shine Dental and Medical Clinic - Dr. Jatin Gupta & Dr. Shefali Gupta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Banner Responsive Styles */
+        @media (max-width: 1024px) {
+            .top-banner .banner-left {
+                gap: 1rem;
+            }
+            .top-banner .banner-item {
+                font-size: 0.8rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .top-banner {
+                display: none !important;
+            }
+            .navbar {
+                top: 0 !important;
+            }
+            .home-section {
+                padding-top: 100px !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .top-banner {
+                display: none !important;
+            }
+            .navbar {
+                top: 0 !important;
+            }
+            .home-section {
+                padding-top: 90px !important;
+            }
+        }
+        
+        /* Service Modal Animation */
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* Service Modal Responsive */
+        @media (max-width: 768px) {
+            .service-modal-content {
+                width: 95% !important;
+                margin: 10% auto !important;
+                max-height: 85vh !important;
+            }
+            .service-modal-header h2 {
+                font-size: 1.5rem !important;
+            }
+            .service-modal-body {
+                padding: 1.5rem !important;
+            }
+        }
+        
+        /* Gallery Section Styles */
+        .gallery-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Gallery Responsive */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .gallery-item img {
+                height: 200px !important;
+            }
+        }
+
+        /* New Carousel Styles */
+        .carousel-slide {
+            transition: opacity 0.8s ease-in-out, z-index 0.8s ease-in-out;
+        }
+        
+        .dot:hover {
+            background: #B28F56 !important;
+            transform: scale(1.2);
+        }
+
+        /* New Carousel Responsive Styles */
+        @media (max-width: 1024px) {
+            .carousel-slide {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            
+            .carousel-slide h1 {
+                font-size: 2.8rem !important;
+            }
+            
+            .carousel-slide h2 {
+                font-size: 1.8rem !important;
+            }
+            
+            .carousel-slide p {
+                font-size: 1.1rem !important;
+                max-width: 100% !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-container {
+                padding: 0 1rem !important;
+            }
+            
+            .carousel-slides {
+                height: 800px !important;
+            }
+            
+            .carousel-slide {
+                padding: 2rem 1rem !important;
+            }
+            
+            .carousel-slide h1 {
+                font-size: 2.2rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .carousel-slide h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .carousel-slide p {
+                font-size: 1rem !important;
+                margin-bottom: 2rem !important;
+            }
+            
+            .carousel-slide .image-container {
+                padding: 1rem !important;
+            }
+            
+            .carousel-slide .slide-image {
+                max-width: 300px !important;
+                height: 300px !important;
+            }
+            
+            #prevBtn, #nextBtn {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1rem !important;
+            }
+            
+            #prevBtn {
+                left: 10px !important;
+            }
+            
+            #nextBtn {
+                right: 10px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-slides {
+                height: 700px !important;
+            }
+            
+            .carousel-slide h1 {
+                font-size: 1.8rem !important;
+            }
+            
+            .carousel-slide h2 {
+                font-size: 1.3rem !important;
+            }
+            
+            .carousel-slide p {
+                font-size: 0.9rem !important;
+            }
+            
+            .carousel-slide .slide-image {
+                max-width: 250px !important;
+                height: 250px !important;
+            }
+            
+            .carousel-slide a {
+                padding: 1rem 1.5rem !important;
+                font-size: 1rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .gallery-item img {
+                height: 180px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Top Banner -->
+    <div class="top-banner" style="background: linear-gradient(135deg, #B28F56, #D4AF37); color: black; padding: 0.8rem 0; position: fixed; top: 0; width: 100%; z-index: 1001; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+        <div class="banner-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
+            <div class="banner-left" style="display: flex; align-items: center; gap: 2rem;">
+                <div class="banner-item" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-phone" style="color: black; font-size: 0.9rem;"></i>
+                    <a href="tel:+918791362345" style="color: black; text-decoration: none; font-weight: 500;">8791362345</a>
+                    <span style="color: black; margin: 0 0.3rem;">|</span>
+                    <a href="tel:+919045452123" style="color: black; text-decoration: none; font-weight: 500;">9045452123</a>
+                </div>
+                <div class="banner-item" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-envelope" style="color: black; font-size: 0.9rem;"></i>
+                    <a href="mailto:shine.dental@yahoo.com" style="color: black; text-decoration: none; font-weight: 500;">shine.dental@yahoo.com</a>
+                </div>
+                <div class="banner-item" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-clock" style="color: black; font-size: 0.9rem;"></i>
+                    <span style="font-weight: 500;">Mon-Sat: 11AM-3PM, 5PM-7:30PM</span>
+                    <span style="color: white; font-weight: bold; margin-left: 0.5rem; background: rgba(0, 0, 0, 0.7); padding: 0.2rem 0.5rem; border-radius: 5px; text-shadow: none;">Sunday: Closed</span>
+                </div>
+            </div>
+            <div class="banner-right" style="display: flex; align-items: center; gap: 1rem;">
+                <a href="#contact" style="background: rgba(0, 0, 0, 0.2); color: black; text-decoration: none; padding: 0.5rem 1.2rem; border-radius: 25px; font-weight: 600; font-size: 0.85rem; border: 1px solid rgba(0, 0, 0, 0.3); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(0, 0, 0, 0.3)'" onmouseout="this.style.background='rgba(0, 0, 0, 0.2)'">
+                    <i class="fas fa-calendar-plus" style="margin-right: 0.3rem;"></i>
+                    Make Appointment
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" style="position: fixed; top: 50px; width: 100%; background: linear-gradient(135deg, #2B4B4A, #1A3A39); padding: 1.2rem 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2); backdrop-filter: blur(10px);">
+        <div class="nav-container" style="max-width: 1200px; margin: 0 10px; padding: 0 2rem; display: flex; justify-content: flex-start; align-items: center; min-height: 80px; gap: 1rem;">
+            <div class="nav-logo" style="display: flex; align-items: center; position: relative; z-index: 1001; flex-shrink: 0;">
+                <img src="./logo/LOGO (1).jpeg" alt="Shine Dental Logo" class="logo-image" style="display: block !important; width: 65px; height: 65px; border-radius: 50%; border: 3px solid white; background: white; padding: 3px; object-fit: cover; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none; width: 65px; height: 65px; border-radius: 50%; border: 3px solid white; background: #00CED1; color: white; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">LOGO</div>
+                <div class="clinic-name" style="margin-left: 15px; color: white;">
+                    <h2 style="margin: 0; font-size: 1.8rem; font-weight: 700; color: white; line-height: 1.1;">Shine Dental</h2>
+                    <p style="margin: 0; font-size: 1rem; color: #B28F56; font-weight: 500; letter-spacing: 0.5px;">& Medical Clinic</p>
+                </div>
+            </div>
+            <div style="flex: 1;"></div>
+            <div class="nav-menu" id="nav-menu" style="display: flex; align-items: center; gap: 2rem;">
+                <a href="#home" class="nav-link" style="white-space: nowrap;">Home</a>
+                <a href="#about" class="nav-link" style="white-space: nowrap;">About Us</a>
+                <a href="#hospital" class="nav-link" style="white-space: nowrap;">Our Clinic</a>
+                <a href="#services" class="nav-link" style="white-space: nowrap;">Services</a>
+                <a href="#treatment" class="nav-link" style="white-space: nowrap;">Treatment</a>
+                <a href="#gallery" class="nav-link" style="white-space: nowrap;">Gallery</a>
+                <a href="#testimonials" class="nav-link" style="white-space: nowrap;">Testimonials</a>
+                <a href="#contact" class="nav-link" style="white-space: nowrap;">Contact</a>
+                <a href="#faq" class="nav-link" style="white-space: nowrap;">FAQ</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section - Full Screen Carousel -->
+    <section id="home" class="home-section carousel-container">
+        
+        <!-- Carousel Slides -->
+        <div class="carousel-slides">
+                
+                <!-- Slide 1: Advanced Root Canal Treatment by Microscope -->
+                <div class="carousel-slide active" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,250,0.95)); backdrop-filter: blur(10px); padding: 0 4rem; margin: 0;">
+                    <!-- Left Content -->
+                    <div style="flex: 1; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                        <h1 style="color: #2B4B4A; font-size: 3.5rem; font-weight: 800; margin: 0 0 1rem 0; line-height: 1.2; font-family: 'Poppins', sans-serif;">Advanced Root Canal Treatment</h1>
+                        <h2 style="color: #B28F56; font-size: 2.2rem; font-weight: 600; margin: 0 0 2rem 0; font-family: 'Poppins', sans-serif;">by Microscope</h2>
+                        <p style="color: #666; font-size: 1.3rem; line-height: 1.8; margin: 0 0 2.5rem 0; max-width: 500px;">Experience painless root canal treatment with 25x magnification for superior precision and comfort. Our advanced microscope technology ensures the highest success rates.</p>
+                        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                            <a href="#contact" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #1A3A39); color: white; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 25px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                            <a href="#services" style="display: inline-block; background: transparent; color: #2B4B4A; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 25px; font-weight: 600; font-size: 1.1rem; border: 2px solid #2B4B4A; transition: all 0.3s ease;" onmouseover="this.style.background='#2B4B4A'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#2B4B4A'">
+                                <i class="fas fa-tooth" style="margin-right: 0.5rem;"></i>
+                                Our Services
+                            </a>
+        </div>
+        </div>
+                    <!-- Right Image -->
+                    <div class="image-container" style="flex: 1; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+                        <div class="slide-image" style="width: 100%; max-width: 600px; height: 600px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); border: 3px solid #B28F56;">
+                            <img src="./Carousel/Microscope.jpeg" alt="Advanced Root Canal Treatment by Microscope" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async" fetchpriority="low">
+                    </div>
+                    </div>
+                </div>
+                        
+                <!-- Slide 2: Fixed teeth Solutions by Dental Implants -->
+                <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,250,0.95)); backdrop-filter: blur(10px); padding: 0 4rem; margin: 0;">
+                    <!-- Left Content -->
+                    <div style="flex: 1; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                        <h1 style="color: #2B4B4A; font-size: 3.5rem; font-weight: 800; margin: 0 0 1rem 0; line-height: 1.2; font-family: 'Poppins', sans-serif;">Fixed Teeth Solutions</h1>
+                        <h2 style="color: #B28F56; font-size: 2.2rem; font-weight: 600; margin: 0 0 2rem 0; font-family: 'Poppins', sans-serif;">by Dental Implants</h2>
+                        <p style="color: #666; font-size: 1.3rem; line-height: 1.8; margin: 0 0 2.5rem 0; max-width: 500px;">Permanent, reliable, and natural-looking solution to restore your smile and oral function. Our dental implants provide the most durable tooth replacement option.</p>
+                        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                            <a href="#contact" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #1A3A39); color: white; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 25px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                            <a href="#services" style="display: inline-block; background: transparent; color: #2B4B4A; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 25px; font-weight: 600; font-size: 1.1rem; border: 2px solid #2B4B4A; transition: all 0.3s ease;" onmouseover="this.style.background='#2B4B4A'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#2B4B4A'">
+                                <i class="fas fa-tooth" style="margin-right: 0.5rem;"></i>
+                                Our Services
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Right Image -->
+                    <div class="image-container" style="flex: 1; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+                        <div class="slide-image" style="width: 100%; max-width: 600px; height: 600px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); border: 3px solid #B28F56;">
+                            <img src="./Carousel/DENTAL IMPLANTS 2.jpg" alt="Fixed Teeth Solutions by Dental Implants" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async" fetchpriority="low">
+                        </div>
+                    </div>
+                </div>
+                    
+                <!-- Slide 3: Most Advanced Dental Laser -->
+                <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,250,0.95)); backdrop-filter: blur(10px); padding: 0 4rem; margin: 0;">
+                    <!-- Left Content -->
+                    <div style="flex: 1; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                        <h1 style="color: #2B4B4A; font-size: 3.5rem; font-weight: 800; margin: 0 0 1rem 0; line-height: 1.2; font-family: 'Poppins', sans-serif;">Most Advanced Dental Laser</h1>
+                        <h2 style="color: #B28F56; font-size: 2.2rem; font-weight: 600; margin: 0 0 2rem 0; font-family: 'Poppins', sans-serif;">A Painless Treatment Modality</h2>
+                        <p style="color: #666; font-size: 1.3rem; line-height: 1.8; margin: 0 0 2.5rem 0; max-width: 500px;">Cutting-edge laser technology for bloodless, painless, and faster healing procedures. Experience the future of dentistry with minimal discomfort.</p>
+                        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <a href="#contact" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #1A3A39); color: white; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 25px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                            <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                            Book Appointment
+                        </a>
+                        <a href="#services" style="display: inline-block; background: transparent; color: #2B4B4A; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 25px; font-weight: 600; font-size: 1.1rem; border: 2px solid #2B4B4A; transition: all 0.3s ease;" onmouseover="this.style.background='#2B4B4A'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#2B4B4A'">
+                            <i class="fas fa-tooth" style="margin-right: 0.5rem;"></i>
+                            Our Services
+                        </a>
+                        </div>
+                    </div>
+                    <!-- Right Image -->
+                    <div class="image-container" style="flex: 1; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+                        <div class="slide-image" style="width: 100%; max-width: 600px; height: 600px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); border: 3px solid #B28F56;">
+                            <img src="./Carousel/Laser .webp" alt="Most Advanced Dental Laser" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async" fetchpriority="low">
+                        </div>
+                    </div>
+            </div>
+                    
+                <!-- Slide 4: Digital Dentistry -->
+                <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,250,0.95)); backdrop-filter: blur(10px); padding: 0 4rem; margin: 0;">
+                    <!-- Left Content -->
+                    <div style="flex: 1; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                        <h1 style="color: #2B4B4A; font-size: 3.5rem; font-weight: 800; margin: 0 0 1rem 0; line-height: 1.2; font-family: 'Poppins', sans-serif;">Digital Dentistry</h1>
+                        <h2 style="color: #B28F56; font-size: 2.2rem; font-weight: 600; margin: 0 0 2rem 0; font-family: 'Poppins', sans-serif;">High Precision Digital Impressions by Intraoral Scanner</h2>
+                        <p style="color: #666; font-size: 1.3rem; line-height: 1.8; margin: 0 0 2.5rem 0; max-width: 500px;">Intraoral scanner technology for accurate 3D impressions without messy traditional methods. Experience precision and comfort in dental impressions.</p>
+                        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                            <a href="#contact" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #1A3A39); color: white; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 25px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                            <a href="#services" style="display: inline-block; background: transparent; color: #2B4B4A; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 25px; font-weight: 600; font-size: 1.1rem; border: 2px solid #2B4B4A; transition: all 0.3s ease;" onmouseover="this.style.background='#2B4B4A'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#2B4B4A'">
+                                <i class="fas fa-tooth" style="margin-right: 0.5rem;"></i>
+                                Our Services
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Right Image -->
+                    <div class="image-container" style="flex: 1; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+                        <div class="slide-image" style="width: 100%; max-width: 600px; height: 600px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); border: 3px solid #B28F56;">
+                            <img src="./Carousel/intra oral scanner.jpg" alt="Digital Dentistry High Precision Digital Impressions" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async" fetchpriority="low">
+                    </div>
+                </div>
+            </div>
+            
+                <!-- Slide 5: Smile Design by Dental Veneers -->
+                <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,249,250,0.95)); backdrop-filter: blur(10px); padding: 0 4rem; margin: 0;">
+                    <!-- Left Content -->
+                    <div style="flex: 1; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                        <h1 style="color: #2B4B4A; font-size: 3.5rem; font-weight: 800; margin: 0 0 1rem 0; line-height: 1.2; font-family: 'Poppins', sans-serif;">Smile Design</h1>
+                        <h2 style="color: #B28F56; font-size: 2.2rem; font-weight: 600; margin: 0 0 2rem 0; font-family: 'Poppins', sans-serif;">by Dental Veneers</h2>
+                        <p style="color: #666; font-size: 1.3rem; line-height: 1.8; margin: 0 0 2.5rem 0; max-width: 500px;">Transform your smile with custom porcelain veneers for a natural, beautiful appearance. Get the perfect smile you've always dreamed of.</p>
+                        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                            <a href="#contact" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #1A3A39); color: white; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 25px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                            <a href="#services" style="display: inline-block; background: transparent; color: #2B4B4A; text-decoration: none; padding: 1.2rem 2.5rem; border-radius: 25px; font-weight: 600; font-size: 1.1rem; border: 2px solid #2B4B4A; transition: all 0.3s ease;" onmouseover="this.style.background='#2B4B4A'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#2B4B4A'">
+                                <i class="fas fa-tooth" style="margin-right: 0.5rem;"></i>
+                                Our Services
+                            </a>
+                    </div>
+                </div>
+                    <!-- Right Image -->
+                    <div class="image-container" style="flex: 1; padding: 2rem; display: flex; align-items: center; justify-content: center;">
+                        <div class="slide-image" style="width: 100%; max-width: 600px; height: 600px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); border: 3px solid #B28F56;">
+                            <img src="./Carousel/DENTAL VENEER .jpg" alt="Smile Design by Dental Veneers" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async" fetchpriority="low">
+            </div>
+                    </div>
+                </div>
+
+            <!-- Navigation Arrows -->
+            <button id="prevBtn" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(43, 75, 74, 0.8); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: all 0.3s ease; z-index: 20;" onmouseover="this.style.background='rgba(43, 75, 74, 1)'" onmouseout="this.style.background='rgba(43, 75, 74, 0.8)'">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextBtn" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(43, 75, 74, 0.8); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: all 0.3s ease; z-index: 20;" onmouseover="this.style.background='rgba(43, 75, 74, 1)'" onmouseout="this.style.background='rgba(43, 75, 74, 0.8)'">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Carousel Dots -->
+            <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 20;">
+                <span class="dot active" style="width: 12px; height: 12px; border-radius: 50%; background: #B28F56; cursor: pointer; transition: all 0.3s ease;"></span>
+                <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(178, 143, 86, 0.3); cursor: pointer; transition: all 0.3s ease;"></span>
+                <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(178, 143, 86, 0.3); cursor: pointer; transition: all 0.3s ease;"></span>
+                <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(178, 143, 86, 0.3); cursor: pointer; transition: all 0.3s ease;"></span>
+                <span class="dot" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(178, 143, 86, 0.3); cursor: pointer; transition: all 0.3s ease;"></span>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Dental Health, Our Priority</h3>
+                    
+                    <div class="doctors-grid">
+                        <div class="doctor-card-1">
+                            <div class="doctor-image-container">
+                                <img src="./doctor image/DR jatin.jpeg" alt="Dr. Jatin Gupta" class="doctor-photo" loading="lazy" decoding="async" fetchpriority="low">
+                            </div>
+                            <div class="doctor-profile">
+                                <h4>Dr. Jatin Gupta - Director & Endodontist</h4>
+                                <p><strong>Education:</strong> Graduated from K.L.E Dental College, Belgaum, Karnataka (2011)</p>
+                                <p><strong>Post Graduation:</strong> Conservative Dentistry and Endodontics from Subharti Dental College, Meerut, Uttar Pradesh (2014)</p>
+                                <p><strong>Special Recognition:</strong> DIPLOMATE OF INDIAN BOARD OF ENDODONTICS (IBE) - 2021</p>
+                                <p><strong>Certification:</strong> Received certification from Professor James L. Gutman for commendable work in Endodontics</p>
+                                <p><strong>Experience:</strong> Former Assistant Professor at Kalka Dental College, Meerut, Uttar Pradesh</p>
+                                <p><strong>Current Position:</strong> Director of Shine Dental And Medical Clinic, Muzaffarnagar, Uttar Pradesh</p>
+                                <p><strong>International Training:</strong> Invited to Europe in 2019 and 2023 as part of special delegation from India for training in latest advances in Endodontics by Coltene, Switzerland</p>
+                                <p><strong>Professional Memberships:</strong> Life member of IDA, IMA, IES, AOI</p>
+                                <p><strong>Speaking Engagements:</strong> Well-known speaker at various international and national conferences</p>
+                                <p><strong>Publications:</strong> Multiple national and international publications in reputed journals</p>
+                                <p><strong>International Representation:</strong> Has represented India at various forums</p>
+                            </div>
+                        </div>
+                        
+                        <div class="doctor-card-2">
+                            <div class="doctor-profile">
+                                <h4>Dr. Shefali Gupta - Director & Endodontist</h4>
+                                <p><strong>Education:</strong> BDS from Santosh Dental College, Ghaziabad (2008)</p>
+                                <p><strong>Post Graduation:</strong> MDS Conservative Dentistry & Endodontics from Subharti Dental College, Meerut, Uttar Pradesh (2014)</p>
+                                <p><strong>Experience:</strong> Former faculty at Muzaffarnagar Medical College, Uttar Pradesh</p>
+                                <p><strong>Current Position:</strong> Director of Shine Dental And Medical Clinic, Muzaffarnagar, Uttar Pradesh</p>
+                                <p><strong>Professional Memberships:</strong> Life member of IDA, IACDE</p>
+                                <p><strong>Publications:</strong> Multiple national and international publications in reputed journals</p>
+                            </div>
+                            <div class="doctor-image-container">
+                                <img src="./doctor image/Dr shefali.jpeg" alt="Dr. Shefali Gupta" class="doctor-photo" loading="lazy" decoding="async" fetchpriority="low">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>As microscopic endodontists, both doctors specialize in managing complex endodontic cases, ensuring the highest success rates and patient comfort through state-of-the-art technology and techniques.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4 class="animated-counter" data-target="15">0</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h4 class="animated-counter" data-target="10000">0</h4>
+                            <p>Happy Patients</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Clinic Section -->
+    <section id="hospital" class="hospital-section">
+        <div class="container">
+            <h2 class="section-title">Our Clinic</h2>
+            <div class="hospital-content">
+                <div class="hospital-image" style="order: 1; grid-column: 1 / -1; text-align: center; margin-bottom: 2rem;">
+                    <img src="hospital.png" alt="Shine Dental and Medical Clinic" class="hospital-photo" style="max-width: 800px; width: 100%; height: auto; margin: 0 auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                <div class="hospital-info" style="order: 2; grid-column: 1 / -1; display: flex; justify-content: center;">
+                    <div class="hospital-card" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 2px solid var(--light-golden); max-width: 600px; text-align: center;">
+                        <h3 style="color: var(--primary-teal); font-size: 1.8rem; font-weight: 700; margin-bottom: 0.8rem;">Shine Dental and Medical Clinic</h3>
+                        <p class="hospital-location" style="color: var(--secondary-golden); font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem;">Near Mahaveer Chowk,<br>Muzaffarnagar-251001<br>Uttar Pradesh</p>
+                         <div class="learn-more-box" style="margin-bottom: 1.5rem; text-align: center;">
+                             <a href="#services" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                 <i class="fas fa-arrow-right" style="margin-right: 0.5rem;"></i>
+                                 Learn More from Service Cards
+                             </a>
+                        </div>
+                        <div class="hospital-description" style="text-align: left;">
+                            <p style="color: #666; line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem;">Our state-of-the-art dental clinic is located in the heart of Muzaffarnagar, featuring modern architecture and cutting-edge dental technology. The facility is designed to provide a comfortable and stress-free environment for all our patients.</p>
+                            <p style="color: #666; line-height: 1.6; margin-bottom: 0; font-size: 0.95rem;">With multiple treatment rooms, advanced sterilization protocols, and a welcoming atmosphere, we ensure that every visit to our clinic is a positive experience. Our clinic is easily accessible and provides all modern amenities for patient convenience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="why-choose-us-section">
+        <div class="container">
+            <h2 class="section-title">Why You Should Choose Us</h2>
+            <div class="why-choose-us-content">
+                <div class="why-choose-us-main">
+                    <div class="why-choose-us-highlight">
+                        <div class="highlight-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="highlight-content">
+                            <h3 style="color: #000000 !important; font-weight: 800 !important; font-size: 1.8rem !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important; background: white !important; padding: 10px !important; border: 2px solid #2B4B4A !important; display: block !important; visibility: visible !important; opacity: 1 !important;">Excellence in Every Detail</h3>
+                            <p style="color: #000000 !important; font-weight: 600 !important; font-size: 1.1rem !important; line-height: 1.6 !important; background: white !important; padding: 10px !important; border: 1px solid #ccc !important; display: block !important; visibility: visible !important; opacity: 1 !important;">At Shine Dental, we believe in delivering exceptional dental care that goes beyond expectations. Our commitment to excellence is reflected in every aspect of our practice.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="why-choose-us-features">
+                        <div class="feature-row">
+                            <div class="feature-item">
+                                <i class="fas fa-user-md"></i>
+                                <span>Comprehensive Dental Care by Specialist Doctors</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-award"></i>
+                                <span>Highly Experienced & Qualified Team</span>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-row">
+                            <div class="feature-item">
+                                <i class="fas fa-microscope"></i>
+                                <span>Advanced Technology & Cutting Edge Equipment</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>International Sterilization Standards</span>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-row">
+                            <div class="feature-item">
+                                <i class="fas fa-home"></i>
+                                <span>Soothing & Hygienic Clinic Environment</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-rupee-sign"></i>
+                                <span>Affordable Treatment Without Compromise</span>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-row">
+                            <div class="feature-item">
+                                <i class="fas fa-heart"></i>
+                                <span>Painless Procedures with Modern Techniques</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Convenient Timing & Emergency Care</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-choose-us-stats">
+                    <div class="stat-item">
+                        <div class="stat-number animated-counter" data-target="15">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number animated-counter" data-target="10000">0</div>
+                        <div class="stat-label">Happy Patients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number animated-counter" data-target="100">0</div>
+                        <div class="stat-label">Patient Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid center-two-cards">
+                <div class="service-card" style="display: none !important;">
+                    <h3 style="color: #000000 !important; font-weight: 900 !important; font-size: 1.6rem !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important; background: white !important; padding: 10px !important; border: 2px solid #2B4B4A !important;">MICRO-ENDODONTICS</h3>
+                    <div class="service-image" style="background-image: url('images/root-canal-treatment.jpg');"></div>
+                    <p style="color: #000000 !important; font-weight: 700 !important; line-height: 1.8 !important; background: white !important; padding: 15px !important; border: 1px solid #ccc !important; font-size: 1.1rem !important;">Painless Root Canal Treatment under high magnification by Surgical Microscope. Advanced precision with 25x magnification for superior outcomes.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('micro-endodontics')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card" style="display: none !important;">
+                    <h3 style="color: #000000 !important; font-weight: 900 !important; font-size: 1.6rem !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important; background: white !important; padding: 10px !important; border: 2px solid #2B4B4A !important;">Dental Implants</h3>
+                    <div class="service-image" style="background-image: url('images/dental-implants.jpg');"></div>
+                    <p style="color: #000000 !important; font-weight: 700 !important; line-height: 1.8 !important; background: white !important; padding: 15px !important; border: 1px solid #ccc !important; font-size: 1.1rem !important;">Single tooth or Full mouth fix teeth solutions by Dental Implants. Permanent, reliable, and natural-looking solution to tooth loss, restoring both function and aesthetics with remarkable results.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('dental-implants')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card" style="display: none !important;">
+                    <h3 style="color: #000000 !important; font-weight: 900 !important; font-size: 1.6rem !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important; background: white !important; padding: 10px !important; border: 2px solid #2B4B4A !important;">Intraoral Scanner</h3>
+                    <div class="service-image" style="background-image: url('New folder/1000222483.jpg');"></div>
+                    <p style="color: #000000 !important; font-weight: 700 !important; line-height: 1.8 !important; background: white !important; padding: 15px !important; border: 1px solid #ccc !important; font-size: 1.1rem !important;">Precision Imaging for Enhanced Diagnosis. Cutting-edge dental tool that captures highly accurate 3D images of teeth and gums, eliminating traditional messy impressions with advanced technology.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('intraoral-scanner')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card visible-service">
+                    <h3 style="color: #000000 !important; font-weight: 900 !important; font-size: 1.6rem !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important; background: white !important; padding: 10px !important; border: 2px solid #2B4B4A !important;">Crown / Bridge</h3>
+                    <div class="service-image" style="background-image: url('images/crown-bridge.jpg');"></div>
+                    <p>Replacement of damaged or missing teeth. Custom-made restorations designed to rebuild function, strength, and appearance with durable and aesthetically pleasing materials.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('crown-bridge')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card visible-service">
+                    <h3 style="color: #000000 !important; font-weight: 900 !important; font-size: 1.6rem !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important; background: white !important; padding: 10px !important; border: 2px solid #2B4B4A !important;">Dental Fillings</h3>
+                    <div class="service-image" style="background-image: url('images/dental-fillings.jpg');"></div>
+                    <p>Tooth Coloured Light Cured Fillings. Natural-looking composite fillings that blend seamlessly with natural enamel, bonding directly to tooth structure for strength and preservation.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('dental-fillings')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card" style="display: none !important;">
+                    <h3 style="color: #000000 !important; font-weight: 900 !important; font-size: 1.6rem !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important; background: white !important; padding: 10px !important; border: 2px solid #2B4B4A !important;">Dental Veneers</h3>
+                    <div class="service-image" style="background-image: url('images/dental-veneers.jpg');"></div>
+                    <p>Smile Designing by Porcelain Veneers. Ultra-thin, custom-made shells that cover front surface of teeth, correcting imperfections for a radiant, symmetrical, and youthful smile.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('dental-veneers')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Dental Laser</h3>
+                    <div class="service-image" style="background-image: url('images/dental-laser.jpg');"></div>
+                    <p>Dental Laser for Painless and Bloodless Surgery, Treatment of mouth Ulcers, TMJ Pains, Root Canal Treatment, Teeth Whitening. Cutting-edge advancement using focused light energy for precise, minimally invasive procedures.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('dental-laser')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Digital Radiology</h3>
+                    <div class="service-image" style="background-image: url('images/digital-radiology.jpg');"></div>
+                    <p>OPG (Full Mouth X-ray), RVG and Portable X-ray. Comprehensive panoramic imaging for accurate diagnosis, treatment planning, and monitoring of oral health conditions with advanced digital technology.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('digital-radiology')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Braces / Aligners</h3>
+                    <div class="service-image" style="background-image: url('images/braces-aligners.jpg');"></div>
+                    <p>Teeth alignment by Ceramic Braces or Aligners. Advanced orthodontic solutions to correct misaligned teeth, bite issues, and jaw irregularities for a straighter, healthier smile with modern comfort.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('braces-aligners')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Teeth Whitening</h3>
+                    <div class="service-image" style="background-image: url('images/teeth-whitening.jpg');"></div>
+                    <p>Teeth Whitening by Laser. Safe, effective, and non-invasive cosmetic treatment to restore natural brightness using professional-grade whitening agents for optimal results and renewed confidence.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('teeth-whitening')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Gums Problems</h3>
+                    <div class="service-image" style="background-image: url('images/gum-treatment.jpg');"></div>
+                    <p>Ultrasonic Cleaning, Deep Curettage and Air polishing. Advanced treatment for gingivitis and periodontitis using modern air polisher technology for gentle, efficient plaque and tartar removal.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('gums-problems')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Kids Dentistry</h3>
+                    <div class="service-image" style="background-image: url('images/kids-dentistry.jpg');"></div>
+                    <p>Fluoride Application, Pits and Fissure Sealants. Specialized pediatric dentistry with gentle, friendly, and preventive approach for infants, children, and teenagers to build healthy oral habits.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('kids-dentistry')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Oral Surgery Treatments</h3>
+                    <div class="service-image" style="background-image: url('images/oral-surgery.jpg');"></div>
+                    <p>Fractured jaw surgeries, tooth extraction and all other maxillofacial treatments. Specialized procedures for complex conditions affecting teeth, jaws, gums, and facial structures with advanced techniques.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('oral-surgery')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Wisdom Tooth Removal</h3>
+                    <div class="service-image" style="background-image: url('images/wisdom-tooth.jpg');"></div>
+                    <p>Safe surgical extraction of impacted third molars. Common procedure to prevent crowding, tooth decay, gum disease, and complications affecting neighboring teeth and jaw structures.</p>
+                    <div class="service-button" style="text-align: center; margin-top: 1rem;">
+                        <a href="#" onclick="openServiceModal('wisdom-tooth')" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 3px 10px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(43, 75, 74, 0.3)'">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="services-toggle" style="text-align: center; margin-top: 3rem;">
+                <button id="readMoreBtn" class="read-more-btn" onclick="toggleServices()" style="background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; border: none; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3);">Read More</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Treatment Section -->
+    <section id="treatment" class="treatment-section">
+        <div class="container">
+            <h2 class="section-title">Our Treatments</h2>
+            <div class="treatment-grid">
+                <div class="treatment-card visible-treatment" style="background-image: url('images/root-canal-treatment.jpg');">
+                    <h3>Single Visit Root Canal</h3>
+                    <p>Complete root canal treatment in just one appointment using advanced microscopic technology and rubber dam isolation for maximum precision.</p>
+                    <ul class="treatment-features">
+                        <li><i class="fas fa-check"></i> One appointment completion</li>
+                        <li><i class="fas fa-check"></i> Microscopic visualization</li>
+                        <li><i class="fas fa-check"></i> Rubber dam isolation</li>
+                        <li><i class="fas fa-check"></i> Immediate pain relief</li>
+                    </ul>
+                </div>
+                <div class="treatment-card visible-treatment" style="background-image: url('images/dental-implants.jpg');">
+                    <h3>All-on-4 Implants</h3>
+                    <p>Revolutionary full-arch dental implant solution using just 4 implants to support a complete set of teeth with immediate loading.</p>
+                    <ul class="treatment-features">
+                        <li><i class="fas fa-check"></i> 4 implants per arch</li>
+                        <li><i class="fas fa-check"></i> Immediate loading</li>
+                        <li><i class="fas fa-check"></i> Full arch restoration</li>
+                        <li><i class="fas fa-check"></i> Same day smile</li>
+                    </ul>
+                </div>
+                <div class="treatment-card" style="display: none !important; background-image: url('images/crown-bridge.jpg');">
+                    <h3>Zirconia Crowns</h3>
+                    <p>Premium zirconia ceramic crowns offering superior strength, natural aesthetics, and biocompatibility for long-lasting dental restorations.</p>
+                    <ul class="treatment-features">
+                        <li><i class="fas fa-check"></i> Metal-free crowns</li>
+                        <li><i class="fas fa-check"></i> Superior strength</li>
+                        <li><i class="fas fa-check"></i> Natural aesthetics</li>
+                        <li><i class="fas fa-check"></i> Biocompatible material</li>
+                    </ul>
+                </div>
+                <div class="treatment-card" style="display: none !important; background-image: url('images/cosmetic-dentistry.jpg');">
+                    <h3>Smile Makeover</h3>
+                    <p>Comprehensive smile transformation combining multiple cosmetic procedures to create your perfect smile with personalized treatment planning.</p>
+                    <ul class="treatment-features">
+                        <li><i class="fas fa-check"></i> Custom treatment plan</li>
+                        <li><i class="fas fa-check"></i> Multiple procedures</li>
+                        <li><i class="fas fa-check"></i> Digital smile design</li>
+                        <li><i class="fas fa-check"></i> Dramatic results</li>
+                    </ul>
+                </div>
+                <div class="treatment-card" style="display: none !important; background-image: url('images/general-dentistry.jpg');">
+                    <h3>Emergency Dental Care</h3>
+                    <p>Immediate dental emergency treatment for severe pain, broken teeth, lost fillings, and urgent dental problems requiring prompt attention.</p>
+                    <ul class="treatment-features">
+                        <li><i class="fas fa-check"></i> 24/7 emergency care</li>
+                        <li><i class="fas fa-check"></i> Immediate pain relief</li>
+                        <li><i class="fas fa-check"></i> Broken tooth repair</li>
+                        <li><i class="fas fa-check"></i> Urgent treatment</li>
+                    </ul>
+                </div>
+                <div class="treatment-card" style="display: none !important; background-image: url('images/endodontics.jpg');">
+                    <h3>Retreatment Root Canal</h3>
+                    <p>Specialized retreatment of failed root canals using advanced microscopic techniques to save teeth that would otherwise need extraction.</p>
+                    <ul class="treatment-features">
+                        <li><i class="fas fa-check"></i> Failed canal treatment</li>
+                        <li><i class="fas fa-check"></i> Microscopic retreatment</li>
+                        <li><i class="fas fa-check"></i> Tooth preservation</li>
+                        <li><i class="fas fa-check"></i> Advanced techniques</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="treatment-toggle" style="text-align: center; margin-top: 3rem;">
+                <button id="readMoreTreatmentBtn" class="read-more-treatment-btn" onclick="toggleTreatments()" style="background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; border: none; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3);">Read More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Explore our modern dental clinic and see the advanced technology and comfortable environment we provide for our patients.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901390.jpg', 'Modern Dental Clinic')">
+                    <img src="./Gallery/AB901390.jpg" alt="Modern Dental Clinic" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901412.jpg', 'Advanced Treatment Room')">
+                    <img src="./Gallery/AB901412.jpg" alt="Advanced Treatment Room" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901401.jpg', 'Cutting-Edge Equipment')">
+                    <img src="./Gallery/AB901401.jpg" alt="Cutting-Edge Equipment" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'">
+                    <img src="./Gallery/AB901395.jpg" alt="Professional Dental Setup" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901369 (1).jpg', 'Sterilization Center')">
+                    <img src="./Gallery/AB901369 (1).jpg" alt="Sterilization Center" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901350.jpg', 'Comfortable Waiting Area')">
+                    <img src="./Gallery/AB901350.jpg" alt="Comfortable Waiting Area" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901344.jpg', 'Precision Instruments')">
+                    <img src="./Gallery/AB901344.jpg" alt="Precision Instruments" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901341.jpg', 'Digital Technology')">
+                    <img src="./Gallery/AB901341.jpg" alt="Digital Technology" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901400.jpg', 'Clinic Reception')">
+                    <img src="./Gallery/AB901400.jpg" alt="Clinic Reception" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901352.jpg', 'Advanced Dental Chair')">
+                    <img src="./Gallery/AB901352.jpg" alt="Advanced Dental Chair" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901354.jpg', 'Modern Treatment Suite')">
+                    <img src="./Gallery/AB901354.jpg" alt="Modern Treatment Suite" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901330.jpg', 'Professional Equipment')">
+                    <img src="./Gallery/AB901330.jpg" alt="Professional Equipment" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901304.jpg', 'Dental Laboratory')">
+                    <img src="./Gallery/AB901304.jpg" alt="Dental Laboratory" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901313.jpg', 'Patient Care Area')">
+                    <img src="./Gallery/AB901313.jpg" alt="Patient Care Area" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901301.jpg', 'Advanced Imaging')">
+                    <img src="./Gallery/AB901301.jpg" alt="Advanced Imaging" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901295.jpg', 'Sterile Environment')">
+                    <img src="./Gallery/AB901295.jpg" alt="Sterile Environment" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+                
+                <div class="gallery-item" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0, 0, 0, 0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onclick="openGalleryModal('./Gallery/AB901337.jpg', 'Modern Clinic Design')">
+                    <img src="./Gallery/AB901337.jpg" alt="Modern Clinic Design" style="width: 100%; height: 250px; object-fit: cover; display: block;" loading="lazy" decoding="async" fetchpriority="low">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Patient Testimonials</h2>
+            <div class="testimonials-carousel">
+                <!-- 1st: Dr. Shefali -->
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <p>"Dr. Shefali Gupta's gentle approach and modern techniques made my dental treatment comfortable and stress-free. Her attention to detail is remarkable."</p>
+                        <div class="testimonial-author">
+                            <h4>Anita Singh</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2nd: Dr. Jatin -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Dr. Jatin's microscopic root canal treatment was painless and precise. The single-visit procedure saved me multiple appointments."</p>
+                        <div class="testimonial-author">
+                            <h4>Priya Sharma</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3rd: Dr. Shefali -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Dr. Shefali's cosmetic dentistry work transformed my smile completely. The porcelain veneers look so natural and beautiful. Highly professional service!"</p>
+                        <div class="testimonial-author">
+                            <h4>Meera Patel</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4th: Dr. Jatin -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Excellent dental implant work by Dr. Jatin. Natural-looking results and comfortable treatment experience."</p>
+                        <div class="testimonial-author">
+                            <h4>Rajesh Kumar</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5th: Dr. Shefali -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Dr. Shefali Gupta's expertise in pediatric dentistry is exceptional. My children actually look forward to their dental visits now. Thank you for making it fun!"</p>
+                        <div class="testimonial-author">
+                            <h4>Ravi Agarwal</h4>
+                            <span>Parent</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 6th: Dr. Jatin -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Dr. Jatin's expertise in complex endodontic cases is outstanding. Highly recommended for dental care in Muzaffarnagar."</p>
+                        <div class="testimonial-author">
+                            <h4>Sunita Verma</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 7th: Dr. Shefali -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The digital scanning technology used by Dr. Shefali is amazing. No more messy impressions! The precision and comfort level is unmatched."</p>
+                        <div class="testimonial-author">
+                            <h4>Kavita Joshi</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 8th: Dr. Jatin -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Dr. Jatin's wisdom tooth extraction was quick and painless. His surgical skills and post-operative care are exceptional."</p>
+                        <div class="testimonial-author">
+                            <h4>Deepak Singh</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 9th: Dr. Shefali -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Dr. Shefali's laser treatment for my gum problems was painless and effective. The recovery was quick and the results are excellent."</p>
+                        <div class="testimonial-author">
+                            <h4>Vikram Malhotra</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 10th: Dr. Jatin -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Dr. Jatin's crown and bridge work restored my smile perfectly. The precision and aesthetics are remarkable. Highly professional!"</p>
+                        <div class="testimonial-author">
+                            <h4>Neha Agarwal</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 11th: Dr. Shefali -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Dr. Shefali Gupta's teeth whitening treatment gave me the confidence to smile again. Professional, safe, and amazing results!"</p>
+                        <div class="testimonial-author">
+                            <h4>Pooja Gupta</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 12th: Dr. Jatin -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Dr. Jatin's digital radiology and OPG scans helped diagnose my dental issues accurately. His diagnostic skills are top-notch."</p>
+                        <div class="testimonial-author">
+                            <h4>Rohit Kumar</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 13th: Dr. Shefali -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Dr. Shefali's orthodontic treatment with clear aligners was perfect for my lifestyle. The results exceeded my expectations completely."</p>
+                        <div class="testimonial-author">
+                            <h4>Arjun Sharma</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 14th: Dr. Jatin -->
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Dr. Jatin's composite fillings look so natural that no one can tell I had dental work done. Excellent craftsmanship!"</p>
+                        <div class="testimonial-author">
+                            <h4>Sushma Reddy</h4>
+                            <span>Patient</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="testimonial-dot active" data-testimonial="0"></span>
+                <span class="testimonial-dot" data-testimonial="1"></span>
+                <span class="testimonial-dot" data-testimonial="2"></span>
+                <span class="testimonial-dot" data-testimonial="3"></span>
+                <span class="testimonial-dot" data-testimonial="4"></span>
+                <span class="testimonial-dot" data-testimonial="5"></span>
+                <span class="testimonial-dot" data-testimonial="6"></span>
+                <span class="testimonial-dot" data-testimonial="7"></span>
+                <span class="testimonial-dot" data-testimonial="8"></span>
+                <span class="testimonial-dot" data-testimonial="9"></span>
+                <span class="testimonial-dot" data-testimonial="10"></span>
+                <span class="testimonial-dot" data-testimonial="11"></span>
+                <span class="testimonial-dot" data-testimonial="12"></span>
+                <span class="testimonial-dot" data-testimonial="13"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Lightbox Modal -->
+    <div id="galleryModal" class="gallery-modal" style="display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9);">
+        <div class="gallery-modal-content" style="position: relative; margin: auto; padding: 0; width: 90%; max-width: 800px; top: 50%; transform: translateY(-50%);">
+            <span class="gallery-close" style="position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 2001;">&times;</span>
+            <img id="galleryModalImg" style="width: 100%; height: auto; border-radius: 10px;">
+            <div class="gallery-caption" style="text-align: center; color: white; padding: 10px 0; font-size: 1.1rem;"></div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p><a href="https://www.google.com/search?q=Shine+Dental+and+Medical+Clinic+Muzaffarnagar" target="_blank" class="contact-link">Shine Dental and Medical<br>Clinic,<br>Near Mahaveer Chowk,<br>Muzaffarnagar-251001<br>Uttar Pradesh</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+918791362345" class="contact-link">8791362345</a>, <a href="tel:+919045452123" class="contact-link">9045452123</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/918791362345" target="_blank" class="whatsapp-link">8791362345</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:shine.dental@yahoo.com" class="contact-link">shine.dental@yahoo.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Monday - Saturday: 11:00 AM - 3:00 PM, 5:00 PM - 7:30 PM<br><span style="color: #ff4444; font-weight: bold;">Sunday: Closed</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is microscopic root canal treatment?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Microscopic root canal treatment uses advanced magnification technology to provide precise treatment of complex root canal cases. This ensures higher success rates and better outcomes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I schedule an appointment?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can schedule an appointment by calling us at 8791362345 or 9045452123, sending us a WhatsApp message at 8791362345, or using our contact form on this website.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What should I bring to my first appointment?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Please bring your ID, any previous dental records, list of current medications, and any relevant X-rays or test results if available.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer single-visit root canal treatment?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, Dr. Jatin specializes in single-visit root canal treatment using microscopic technology and rubber dam isolation for optimal results and patient comfort.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are your clinic hours?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our clinic is open Monday to Saturday from 11:00 AM to 3:00 PM and 5:00 PM to 7:30 PM. We are closed on Sundays.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 style="color: #B28F56; font-weight: 700;">Shine Dental & Medical Clinic</h3>
+                    <p style="color: #E8E8E8; line-height: 1.6;">Providing advanced dental care with microscopic precision and 15+ years of expertise in Muzaffarnagar.</p>
+                    <div class="social-links">
+                        <a href="https://www.google.com/search?q=Shine+Dental+and+Medical+Clinic+Muzaffarnagar&kgmid=%2Fg%2F11c1txw1cf" target="_blank" class="social-link">
+                            <i class="fas fa-map-marker-alt" style="color: #4285F4; font-size: 20px;"></i>
+                        </a>
+                        <a href="https://www.facebook.com/theshinedental?mibextid=wwXIfr&rdid=tm0jxKA86JSDt8xn&share_url=https%253A%252F%252Fwww.facebook.com%252Fshare%252F19a7d4nyiN%252F%253Fmibextid%253DwwXIfr#" target="_blank" class="social-link" title="Follow us on Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png" alt="Facebook" class="social-icon" loading="lazy" decoding="async" fetchpriority="low">
+                        </a>
+                        <a href="https://www.instagram.com/shinedentalmzn/" target="_blank" class="social-link" title="Follow us on Instagram">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-Instagram_logo_2016.svg.png" alt="Instagram" class="social-icon" loading="lazy" decoding="async" fetchpriority="low">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 style="color: #B28F56; font-weight: 600; margin-bottom: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#home" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">Home</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#about" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">About Us</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#hospital" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">Our Clinic</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#services" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">Services</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#contact" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 style="color: #B28F56; font-weight: 600; margin-bottom: 1rem;">Services</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#services" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">Microscopic Root Canal</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#services" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">Dental Implants</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#services" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">Endodontics</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#services" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">General Dentistry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 style="color: #B28F56; font-weight: 600; margin-bottom: 1rem;">Contact Info</h4>
+                    <p style="color: #E8E8E8; margin-bottom: 0.8rem;"><i class="fas fa-phone" style="color: #B28F56; margin-right: 0.5rem;"></i> <a href="tel:+918791362345" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">8791362345</a>, <a href="tel:+919045452123" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">9045452123</a></p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/918791362345" target="_blank" class="whatsapp-link">8791362345</a></p>
+                    <p style="color: #E8E8E8; margin-bottom: 0.8rem;"><i class="fas fa-envelope" style="color: #B28F56; margin-right: 0.5rem;"></i> <a href="mailto:shine.dental@yahoo.com" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">shine.dental@yahoo.com</a></p>
+                    <p style="color: #E8E8E8; margin-bottom: 0.8rem;"><i class="fas fa-map-marker-alt" style="color: #B28F56; margin-right: 0.5rem;"></i> <a href="https://www.google.com/search?q=Shine+Dental+and+Medical+Clinic+Muzaffarnagar" target="_blank" style="color: #E8E8E8; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#B28F56'" onmouseout="this.style.color='#E8E8E8'">Shine Dental and Medical Clinic, Near Mahaveer Chowk, Muzaffarnagar-251001, Uttar Pradesh</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: #E8E8E8; text-align: center; margin: 0; padding: 1rem 0; border-top: 1px solid #B28F56;">&copy; 2024 Shine Dental & Medical Clinic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Service Details Modal -->
+    <div id="serviceModal" class="service-modal" style="display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(5px);">
+        <div class="service-modal-content" style="background-color: white; margin: 5% auto; padding: 0; border-radius: 20px; width: 90%; max-width: 800px; max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); animation: modalSlideIn 0.3s ease-out;">
+            <div class="service-modal-header" style="background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; padding: 2rem; border-radius: 20px 20px 0 0; position: relative;">
+                <h2 id="serviceModalTitle" style="margin: 0; font-size: 2rem; font-weight: 700; text-align: center;">Service Details</h2>
+                <span class="close-service-modal" onclick="closeServiceModal()" style="position: absolute; top: 1rem; right: 1.5rem; font-size: 2rem; font-weight: bold; cursor: pointer; color: white; transition: color 0.3s ease;" onmouseover="this.style.color='#ff4444'" onmouseout="this.style.color='white'">&times;</span>
+            </div>
+            <div class="service-modal-body" style="padding: 2rem;">
+                <div id="serviceModalContent">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Form Modal -->
+    <div id="appointmentModal" class="appointment-modal">
+        <div class="appointment-modal-content">
+            <div class="appointment-modal-header">
+                <h2>Book Your Appointment</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="appointmentForm" class="appointment-form">
+                <div class="form-group">
+                    <label for="patientName">Full Name *</label>
+                    <input type="text" id="patientName" name="patientName" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="patientAge">Age *</label>
+                        <input type="number" id="patientAge" name="patientAge" min="1" max="120" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientGender">Gender *</label>
+                        <select id="patientGender" name="patientGender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="patientPhone">Phone Number *</label>
+                    <input type="tel" id="patientPhone" name="patientPhone" pattern="[0-9]{10}" placeholder="10 digit number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="patientEmail">Email</label>
+                    <input type="email" id="patientEmail" name="patientEmail" placeholder="your@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointmentDate">Preferred Date *</label>
+                    <input type="date" id="appointmentDate" name="appointmentDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointmentTime">Preferred Time *</label>
+                    <select id="appointmentTime" name="appointmentTime" required>
+                        <option value="">Select Time</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="11:30">11:30 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="12:30">12:30 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="13:30">1:30 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="14:30">2:30 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="17:30">5:30 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="18:30">6:30 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="treatmentType">Treatment Required *</label>
+                    <select id="treatmentType" name="treatmentType" required>
+                        <option value="">Select Treatment</option>
+                        <option value="micro-endodontics">Micro-Endodontics (Root Canal)</option>
+                        <option value="dental-implants">Dental Implants</option>
+                        <option value="crown-bridge">Crown & Bridge</option>
+                        <option value="dental-fillings">Dental Fillings</option>
+                        <option value="dental-veneers">Dental Veneers</option>
+                        <option value="dental-laser">Dental Laser Treatment</option>
+                        <option value="digital-radiology">Digital Radiology</option>
+                        <option value="braces-aligners">Braces/Aligners</option>
+                        <option value="teeth-whitening">Teeth Whitening</option>
+                        <option value="gums-problems">Gums Problems</option>
+                        <option value="kids-dentistry">Kids Dentistry</option>
+                        <option value="oral-surgery">Oral Surgery</option>
+                        <option value="wisdom-tooth">Wisdom Tooth Removal</option>
+                        <option value="consultation">General Consultation</option>
+                        <option value="emergency">Emergency Care</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="patientMessage">Additional Information</label>
+                    <textarea id="patientMessage" name="patientMessage" rows="4" placeholder="Please describe your dental concern or any specific requirements..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Book Appointment</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Call Button -->
+
+    <script src="script.js" defer></script>
+    <script>
+        // Force refresh logo if not visible
+        window.addEventListener('load', function() {
+            const logo = document.querySelector('.logo-image');
+            if (logo && logo.complete && logo.naturalHeight === 0) {
+                // Logo failed to load, trying alternative
+                logo.src = './images/clinic-logo.jpeg?v=' + Date.now();
+            }
+        });
+        
+        // Handle mobile responsiveness for logo, clinic name, and carousel
+        function handleMobileDisplay() {
+            const logoBlock = document.querySelector('.home-section > div:nth-child(2)');
+            const clinicNameBlock = document.querySelector('.home-section > div:nth-child(3)');
+            const carouselBlock = document.querySelector('.home-section > div:nth-child(4)');
+            
+            if (window.innerWidth <= 768) {
+                // Mobile layout - stack vertically
+                if (logoBlock) {
+                    logoBlock.style.top = '150px';
+                    logoBlock.style.left = '50%';
+                    logoBlock.style.transform = 'translateX(-50%)';
+                    logoBlock.querySelector('img').style.width = '100px';
+                    logoBlock.querySelector('img').style.height = '100px';
+                }
+                
+                if (clinicNameBlock) {
+                    clinicNameBlock.style.top = '280px';
+                    clinicNameBlock.style.left = '20px';
+                    clinicNameBlock.style.right = '20px';
+                    clinicNameBlock.style.maxWidth = 'none';
+                    clinicNameBlock.style.padding = '1.5rem 2rem';
+                    clinicNameBlock.querySelector('h1').style.fontSize = '1.8rem';
+                    clinicNameBlock.querySelector('p').style.fontSize = '1.1rem';
+                }
+                
+                if (carouselBlock) {
+                    carouselBlock.style.top = '520px';
+                    carouselBlock.style.right = '20px';
+                    carouselBlock.style.left = '20px';
+                    carouselBlock.style.width = 'auto';
+                    carouselBlock.style.height = '350px';
+                }
+            } else {
+                // Desktop layout - side by side
+                if (logoBlock) {
+                    logoBlock.style.top = '200px';
+                    logoBlock.style.left = '30px';
+                    logoBlock.style.transform = 'none';
+                    logoBlock.querySelector('img').style.width = '120px';
+                    logoBlock.querySelector('img').style.height = '120px';
+                }
+                
+                if (clinicNameBlock) {
+                    clinicNameBlock.style.top = '230px';
+                    clinicNameBlock.style.left = '180px';
+                    clinicNameBlock.style.right = 'auto';
+                    clinicNameBlock.style.maxWidth = '500px';
+                    clinicNameBlock.style.padding = '2rem 3rem';
+                    clinicNameBlock.querySelector('h1').style.fontSize = '2.5rem';
+                    clinicNameBlock.querySelector('p').style.fontSize = '1.3rem';
+                }
+                
+                if (carouselBlock) {
+                    carouselBlock.style.top = '230px';
+                    carouselBlock.style.right = '30px';
+                    carouselBlock.style.left = 'auto';
+                    carouselBlock.style.width = '350px';
+                    carouselBlock.style.height = '400px';
+                }
+            }
+        }
+        
+        // Doctors Carousel Functionality
+        function initDoctorsCarousel() {
+            // Initializing doctors carousel
+            
+            const slide0 = document.getElementById('slide-0');
+            const slide1 = document.getElementById('slide-1');
+            const dot0 = document.getElementById('dot-0');
+            const dot1 = document.getElementById('dot-1');
+            
+            let currentSlide = 0;
+            let autoSlideInterval;
+            
+            // Checking carousel elements
+            
+            function showSlide(index) {
+                // Showing slide
+                
+                // Hide all slides
+                if (slide0) {
+                    slide0.style.display = 'none';
+                    slide0.style.opacity = '0';
+                    slide0.classList.remove('active');
+                }
+                if (slide1) {
+                    slide1.style.display = 'none';
+                    slide1.style.opacity = '0';
+                    slide1.classList.remove('active');
+                }
+                
+                // Remove active from all dots
+                if (dot0) dot0.classList.remove('active');
+                if (dot1) dot1.classList.remove('active');
+                
+                // Show current slide
+                if (index === 0 && slide0) {
+                    slide0.style.display = 'block';
+                    slide0.style.opacity = '1';
+                    slide0.classList.add('active');
+                    if (dot0) dot0.classList.add('active');
+                    // Showing Dr. Jatin slide
+                } else if (index === 1 && slide1) {
+                    slide1.style.display = 'block';
+                    slide1.style.opacity = '1';
+                    slide1.classList.add('active');
+                    if (dot1) dot1.classList.add('active');
+                    // Showing Dr. Shefali slide
+                }
+                
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                const nextIndex = (currentSlide + 1) % 2;
+                // Next slide
+                showSlide(nextIndex);
+            }
+            
+            // Event listeners for dots
+            if (dot0) {
+                dot0.addEventListener('click', () => {
+                    // Dot 0 clicked
+                    showSlide(0);
+                    resetAutoSlide();
+                });
+            }
+            
+            if (dot1) {
+                dot1.addEventListener('click', () => {
+                    // Dot 1 clicked
+                    showSlide(1);
+                    resetAutoSlide();
+                });
+            }
+            
+            // Auto slide functionality
+            function startAutoSlide() {
+                // Starting auto slide
+                autoSlideInterval = setInterval(nextSlide, 10000); // 10 seconds
+            }
+            
+            function resetAutoSlide() {
+                // Resetting auto slide
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+            
+            // Initialize
+            // Initializing carousel
+            showSlide(0);
+            startAutoSlide();
+            
+            // Test both slides after 3 seconds
+            setTimeout(() => {
+                // Testing slide 1
+                showSlide(1);
+                setTimeout(() => {
+                    // Testing slide 0
+                    showSlide(0);
+                }, 2000);
+            }, 3000);
+            
+            // Pause on hover
+            const carouselContainer = document.querySelector('.doctors-carousel');
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseenter', () => {
+                    // Carousel hover - pausing
+                    clearInterval(autoSlideInterval);
+                });
+                
+                carouselContainer.addEventListener('mouseleave', () => {
+                    // Carousel leave - resuming
+                    startAutoSlide();
+                });
+            }
+            
+            // Carousel initialization complete
+        }
+        
+        // Services Carousel Functionality
+        function initServicesCarousel() {
+            // Initializing services carousel
+            
+            const slides = document.querySelectorAll('.service-slide');
+            const dots = document.querySelectorAll('.service-dot');
+            const mainImage = document.getElementById('main-image');
+            
+            let currentSlide = 0;
+            let autoSlideInterval;
+            
+            // Image array for right side
+            const images = [
+                './carousel 2/1 dental.avif',
+                './carousel 2/2nd dental.avif',
+                './carousel 2/1 dental.avif',
+                './carousel 2/2nd dental.avif',
+                './carousel 2/1 dental.avif'
+            ];
+            
+            // Services carousel elements found
+            
+            function showSlide(index) {
+                // Showing services slide
+                
+                // Hide all slides
+                slides.forEach((slide, i) => {
+                    if (slide) {
+                        slide.style.opacity = '0';
+                        slide.classList.remove('active');
+                    }
+                });
+                
+                // Remove active from all dots
+                dots.forEach(dot => {
+                    if (dot) {
+                        dot.classList.remove('active');
+                        dot.style.background = 'rgba(178, 143, 86, 0.3)';
+                    }
+                });
+                
+                // Show current slide
+                if (slides[index]) {
+                    slides[index].style.opacity = '1';
+                    slides[index].classList.add('active');
+                    if (dots[index]) {
+                        dots[index].classList.add('active');
+                        dots[index].style.background = '#B28F56';
+                    }
+                    // Showing services slide
+                }
+                
+                // Update right side image
+                if (mainImage && images[index]) {
+                    mainImage.src = images[index];
+                }
+                
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                const nextIndex = (currentSlide + 1) % slides.length;
+                showSlide(nextIndex);
+            }
+            
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 10000); // Change every 10 seconds
+            }
+            
+            function stopAutoSlide() {
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                }
+            }
+            
+            // Add click event listeners to dots
+            dots.forEach((dot, index) => {
+                if (dot) {
+                    dot.addEventListener('click', () => {
+                        // Services dot clicked
+                        stopAutoSlide();
+                        showSlide(index);
+                        startAutoSlide();
+                    });
+                }
+            });
+            
+            // Initialize
+            // Initializing services carousel
+            showSlide(0);
+            startAutoSlide();
+            
+            // Pause on hover
+            const servicesCarousel = document.getElementById('services-carousel');
+            if (servicesCarousel) {
+                servicesCarousel.addEventListener('mouseenter', stopAutoSlide);
+                servicesCarousel.addEventListener('mouseleave', startAutoSlide);
+            }
+            
+            // Services carousel initialization complete
+        }
+        
+        window.addEventListener('load', function() {
+            // Page loaded, initializing carousels
+            handleMobileDisplay();
+            initServicesCarousel();
+        });
+        window.addEventListener('resize', handleMobileDisplay);
+        
+        // Force carousel initialization after a delay
+        setTimeout(() => {
+            // Force initializing carousels after delay
+            initServicesCarousel();
+        }, 2000);
+        
+        // Add manual test function
+        window.testCarousel = function() {
+            // Manual carousel test triggered
+            const slide0 = document.getElementById('slide-0');
+            const slide1 = document.getElementById('slide-1');
+            const dot0 = document.getElementById('dot-0');
+            const dot1 = document.getElementById('dot-1');
+            
+            // Checking carousel elements
+            
+            if (slide0 && slide1) {
+                // Testing slide 1 (Dr. Shefali)
+                slide0.style.display = 'none';
+                slide0.style.opacity = '0';
+                slide1.style.display = 'block';
+                slide1.style.opacity = '1';
+                if (dot0) dot0.classList.remove('active');
+                if (dot1) dot1.classList.add('active');
+                
+                setTimeout(() => {
+                    // Testing slide 0 (Dr. Jatin)
+                    slide1.style.display = 'none';
+                    slide1.style.opacity = '0';
+                    slide0.style.display = 'block';
+                    slide0.style.opacity = '1';
+                    if (dot1) dot1.classList.remove('active');
+                    if (dot0) dot0.classList.add('active');
+                }, 2000);
+            } else {
+                console.error('Slides not found!');
+            }
+        };
+        
+        // Force text visibility in services section
+        function forceTextVisibility() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                const headings = card.querySelectorAll('h3');
+                const paragraphs = card.querySelectorAll('p');
+                
+                headings.forEach(h => {
+                    h.style.color = '#000000';
+                    h.style.fontWeight = '900';
+                    h.style.fontSize = '1.6rem';
+                    h.style.textShadow = '1px 1px 2px rgba(0,0,0,0.1)';
+                    h.style.background = 'white';
+                    h.style.padding = '10px';
+                    h.style.border = '2px solid #2B4B4A';
+                    h.style.display = 'block';
+                    h.style.visibility = 'visible';
+                    h.style.opacity = '1';
+                });
+                
+                paragraphs.forEach(p => {
+                    p.style.color = '#000000';
+                    p.style.fontWeight = '700';
+                    p.style.fontSize = '1.1rem';
+                    p.style.lineHeight = '1.8';
+                    p.style.background = 'white';
+                    p.style.padding = '15px';
+                    p.style.border = '1px solid #ccc';
+                    p.style.display = 'block';
+                    p.style.visibility = 'visible';
+                    p.style.opacity = '1';
+                });
+            });
+        }
+        
+        // Animated Counter Function
+        function animateCounters() {
+            const counters = document.querySelectorAll('.animated-counter');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 3000; // 3 seconds
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString();
+                        // Add "+" for patient count
+                        if (target === 10000) {
+                            counter.textContent = target.toLocaleString() + '+';
+                        } else if (target === 15) {
+                            counter.textContent = target + '+';
+                        } else if (target === 100) {
+                            counter.textContent = target + '%';
+                        }
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // Intersection Observer for counter animation
+        function initCounterObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const aboutStats = document.querySelector('.about-stats');
+            const whyChooseStats = document.querySelector('.why-choose-us-stats');
+            
+            if (aboutStats) observer.observe(aboutStats);
+            if (whyChooseStats) observer.observe(whyChooseStats);
+        }
+        
+        // Call the function when page loads
+        window.addEventListener('load', function() {
+            forceTextVisibility();
+            setTimeout(forceTextVisibility, 1000);
+            setTimeout(forceTextVisibility, 3000);
+            initializeServices();
+            initializeTreatments();
+            initCounterObserver();
+            
+            // Navbar functionality is handled by initMobileNav() in script.js
+        });
+        
+        // Initialize services display
+        function initializeServices() {
+            const allServices = document.querySelectorAll('.service-card');
+            allServices.forEach((service, index) => {
+                if (index >= 4) {
+                    service.style.display = 'none';
+                    service.classList.remove('visible-service');
+                } else {
+                    service.style.display = 'block';
+                    service.classList.add('visible-service');
+                }
+            });
+        }
+        
+        // Toggle services visibility
+        function toggleServices() {
+            console.log('toggleServices called');
+            const hiddenServices = document.querySelectorAll('.service-card:not(.visible-service)');
+            const readMoreBtn = document.getElementById('readMoreBtn');
+            
+            if (!readMoreBtn) {
+                console.error('Read More button not found');
+                return;
+            }
+            
+            if (hiddenServices.length > 0) {
+                // Show all services
+                hiddenServices.forEach(service => {
+                    service.style.display = 'block';
+                    service.classList.add('visible-service');
+                });
+                readMoreBtn.textContent = 'Read Less';
+            } else {
+                // Hide services except first 4
+                const allServices = document.querySelectorAll('.service-card');
+                allServices.forEach((service, index) => {
+                    if (index >= 4) {
+                        service.style.display = 'none';
+                        service.classList.remove('visible-service');
+                    }
+                });
+                readMoreBtn.textContent = 'Read More';
+            }
+        }
+        
+        // Initialize treatments display
+        function initializeTreatments() {
+            const allTreatments = document.querySelectorAll('.treatment-card');
+            allTreatments.forEach((treatment, index) => {
+                if (index >= 2) {
+                    treatment.style.display = 'none';
+                    treatment.classList.remove('visible-treatment');
+                } else {
+                    treatment.style.display = 'block';
+                    treatment.classList.add('visible-treatment');
+                }
+            });
+        }
+        
+        // Toggle treatments visibility
+        function toggleTreatments() {
+            const hiddenTreatments = document.querySelectorAll('.treatment-card:not(.visible-treatment)');
+            const readMoreTreatmentBtn = document.getElementById('readMoreTreatmentBtn');
+            
+            if (hiddenTreatments.length > 0) {
+                // Show all treatments
+                hiddenTreatments.forEach(treatment => {
+                    treatment.style.display = 'block';
+                    treatment.classList.add('visible-treatment');
+                });
+                readMoreTreatmentBtn.textContent = 'Read Less';
+            } else {
+                // Hide treatments except first 2
+                const allTreatments = document.querySelectorAll('.treatment-card');
+                allTreatments.forEach((treatment, index) => {
+                    if (index >= 2) {
+                        treatment.style.display = 'none';
+                        treatment.classList.remove('visible-treatment');
+                    }
+                });
+                readMoreTreatmentBtn.textContent = 'Read More';
+            }
+        }
+        
+        // Service Modal Functions
+        function openServiceModal(serviceType) {
+            console.log('openServiceModal called with:', serviceType);
+            const modal = document.getElementById('serviceModal');
+            const title = document.getElementById('serviceModalTitle');
+            const content = document.getElementById('serviceModalContent');
+            
+            if (!modal || !title || !content) {
+                console.error('Modal elements not found');
+                return;
+            }
+            
+            if (serviceType === 'micro-endodontics') {
+                title.textContent = 'MICRO-ENDODONTICS (Root Canal Treatment by Microscope)';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Painless Root Canal Treatment under high magnification by Surgical Microscope.
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                <strong style="color: #2B4B4A;">Micro-Endodontics</strong> represents a modern advancement in root canal therapy, combining precision, magnification, and cutting-edge technology to deliver superior outcomes in endodontic treatment. Utilizing dental operating microscopes and specialized microsurgical instruments, this technique allows for enhanced visualization and meticulous handling of complex root canal systems.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                By magnifying the internal structures of the tooth up to <strong style="color: #B28F56;">25 times</strong>, Micro-Endodontics enables clinicians to detect hidden canals, micro-fractures, and anatomical intricacies that are often missed with traditional methods. The result is a more accurate diagnosis, improved cleaning and shaping, and higher long-term success rates.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                With a focus on preserving natural teeth through minimally invasive techniques, Micro-Endodontics has become the <strong style="color: #B28F56;">gold standard</strong> in modern root canal treatment—offering patients greater comfort, faster recovery, and predictable results.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'dental-implants') {
+                title.textContent = 'Dental Implants';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Single tooth or Full mouth fix teeth solutions by Dental Implants.
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Missing teeth can affect more than just your appearance—they can impact your ability to speak, chew, and maintain proper oral health. <strong style="color: #2B4B4A;">Dental implants</strong> offer a permanent, reliable, and natural-looking solution to tooth loss, restoring both function and aesthetics with remarkable results.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                A dental implant is a <strong style="color: #B28F56;">titanium post</strong> that is surgically placed into the jawbone, acting as an artificial tooth root. Once integrated with the bone, it provides a strong foundation for a crown, bridge, or denture. Unlike traditional prosthetics, implants preserve bone structure, prevent facial sagging, and feel and function like natural teeth.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Whether you're missing one tooth, several teeth, or need full-mouth rehabilitation, dental implants provide a long-term solution that improves quality of life, confidence, and oral health. Experience the future of tooth replacement with dental implants—a strong foundation for a healthy smile.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'crown-bridge') {
+                title.textContent = 'Crown / Bridge';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Replacement of damaged or missing teeth
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                <strong style="color: #2B4B4A;">Dental crowns and bridges</strong> are time-tested restorative solutions designed to rebuild the function, strength, and appearance of damaged or missing teeth. Whether due to decay, trauma, or tooth loss, these custom-made restorations help restore your smile and maintain the natural alignment of your bite.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                A <strong style="color: #B28F56;">dental crown</strong> is a tooth-shaped cap that covers and protects a weakened or broken tooth, restoring its shape, size, and strength. A <strong style="color: #B28F56;">dental bridge</strong>, on the other hand, replaces one or more missing teeth by anchoring to the adjacent natural teeth or implants, effectively "bridging" the gap.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Crafted from durable and aesthetically pleasing materials, crowns and bridges not only enhance oral function but also provide a natural-looking and long-lasting solution. They are essential components in comprehensive dental care, helping patients regain confidence and comfort in their smile.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'intraoral-scanner') {
+                title.textContent = 'Intraoral Scanner';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Precision Imaging for Enhanced Diagnosis
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                An intraoral scanner is a cutting-edge dental tool that captures highly accurate 3D images of your teeth and gums, eliminating the need for traditional messy impressions. This advanced technology enhances diagnostic precision and treatment planning by providing detailed visual data in real time.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                With its compact design and non-invasive approach, the scanner ensures a comfortable experience for patients while allowing dentists to assess oral conditions with greater clarity. The digital impressions generated are instantly available, streamlining procedures like crowns, bridges, aligners, and smile design.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                By integrating intraoral scanning into clinical practice, we deliver faster, more efficient, and personalized dental care with exceptional accuracy.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'dental-veneers') {
+                title.textContent = 'Dental Veneers';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Smile Designing by Porcelain Veneers
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                A beautiful smile has the power to enhance confidence, transform appearances, and leave a lasting impression. Smile designing through porcelain veneers is a revolutionary cosmetic dental procedure that blends art and science to craft harmonious, natural-looking smiles. Porcelain veneers are ultra-thin, custom-made shells designed to cover the front surface of teeth, correcting imperfections such as discoloration, chips, gaps, or misalignment.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                With their superior aesthetics and durability, porcelain veneers offer a minimally invasive solution for those seeking a radiant, symmetrical, and youthful smile. Whether you're looking to make subtle improvements or a dramatic transformation, smile designing with veneers allows for a personalized approach tailored to your facial features, desires, and dental health.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'dental-fillings') {
+                title.textContent = 'Dental Fillings';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Tooth Coloured Light Cured Fillings
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Tooth-coloured fillings, also known as composite fillings, offer a natural-looking and effective solution for restoring teeth affected by cavities, cracks, or minor damage. Unlike traditional silver (amalgam) fillings, these modern restorations are made from a durable, tooth-coloured resin that blends seamlessly with your natural enamel—making them virtually invisible.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                In addition to their aesthetic advantage, tooth-coloured fillings bond directly to the tooth structure, helping to strengthen the tooth and preserve more of its natural form. They are ideal for both front and back teeth and can also be used to replace old metal fillings for a more uniform, attractive smile.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Tooth-coloured fillings provide a safe, strong, and subtle way to restore dental health while keeping your smile looking its best.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'dental-laser') {
+                title.textContent = 'Dental Laser';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Dental Laser for Painless and Bloodless Surgery, Treatment of mouth Ulcers, TMJ Pains, Root Canal Treatment, Teeth Whitening
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Dental lasers represent a cutting-edge advancement in modern dentistry, offering a precise, minimally invasive, and highly effective approach to a wide range of dental procedures. By using focused light energy, lasers allow dentists to perform treatments on both hard and soft tissues with exceptional accuracy and reduced discomfort.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                From treating gum disease and removing decay to performing soft tissue surgeries and teeth whitening, dental lasers improve outcomes by minimizing bleeding, reducing the need for anaesthesia, and promoting faster healing. They also enhance patient comfort, making dental visits more efficient and less stressful.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                As a cornerstone of high-tech, patient-friendly care, dental lasers are transforming how we approach oral health—delivering safe, gentle, and innovative solutions for healthier smiles.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'digital-radiology') {
+                title.textContent = 'Digital Radiology';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            OPG (Full Mouth X-ray), RVG and Portable X-ray
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Dental radiology plays a vital role in modern dentistry, enabling accurate diagnosis, treatment planning, and monitoring of oral health conditions that are not visible to the naked eye. One of the most widely used tools in dental imaging is the Orthopantomogram (OPG)—a panoramic X-ray that provides a comprehensive view of the entire mouth, including the teeth, jaws, temporomandibular joints (TMJ), and surrounding structures.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                An OPG is quick, non-invasive, and highly effective for evaluating impacted teeth, jaw disorders, infections, bone loss, and overall dental development. It is an essential diagnostic tool for various dental treatments, including implants, orthodontics, extractions, and oral surgery.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                By combining advanced imaging technology with expert analysis, dental radiology and OPG help ensure safer, more precise, and personalized dental care—bringing clarity to diagnosis and confidence to treatment.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'braces-aligners') {
+                title.textContent = 'Braces / Aligners';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Teeth alignment by Ceramic Braces or Aligners
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                A well-aligned smile is not only aesthetically pleasing but also essential for optimal oral health and function. Braces and aligners are advanced orthodontic solutions designed to correct misaligned teeth, bite issues, and jaw irregularities—helping patients achieve a straighter, healthier smile.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Traditional braces use metal or ceramic brackets and wires to gradually move teeth into their ideal positions. Clear aligners, such as Invisalign, offer a more discreet and removable alternative using custom-made, transparent trays that fit snugly over the teeth.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Whether you're a teen or an adult, modern orthodontic treatments are more comfortable, efficient, and personalized than ever before. Braces and aligners not only improve appearance but also contribute to better oral hygiene, speech, and long-term dental stability.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'teeth-whitening') {
+                title.textContent = 'Teeth Whitening';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Teeth Whitening by Laser
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                A bright, white smile is often seen as a symbol of health, youth, and confidence. Over time, factors like coffee, tea, red wine, smoking, and aging can cause teeth to become stained or discolored. Teeth whitening is a safe, effective, and non-invasive cosmetic dental treatment designed to restore the natural brightness of your smile.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Using professional-grade whitening agents, either in-office or through take-home kits, teeth whitening can significantly lighten the shade of your teeth in just one session or over a short period. Unlike over-the-counter products, dentist-supervised whitening ensures optimal results while protecting your enamel and gum health.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Whether you're preparing for a special occasion or simply want to boost your self-confidence, teeth whitening offers a quick and noticeable enhancement—helping you smile brighter, with renewed confidence.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'gums-problems') {
+                title.textContent = 'Gums Problems';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Ultrasonic Cleaning, Deep Curettage and Air polishing
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Gum problems, such as gingivitis and periodontitis, are common yet serious conditions that affect the health of your gums and the supporting structures of your teeth. These issues often arise due to the buildup of plaque and tartar, leading to inflammation, bleeding, and, if untreated, potential tooth loss. Maintaining healthy gums is essential for overall oral health and a confident smile.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                An effective tool in managing and preventing gum problems is the air polisher—a modern dental device that uses a controlled stream of air, water, and fine powder to gently and efficiently remove plaque, stains, and soft deposits from teeth and gum surfaces. Air polishing is comfortable, minimally invasive, and enhances the cleaning process beyond traditional methods.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Together, early treatment of gum problems and the use of advanced cleaning techniques like air polishing help maintain healthy gums, prevent disease progression, and keep your smile fresh and bright.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'kids-dentistry') {
+                title.textContent = 'Kids Dentistry';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Fluoride Application, Pits and Fissure Sealants
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                A child's smile is precious—and caring for it from an early age lays the foundation for a lifetime of healthy oral habits. Kids dentistry, also known as pediatric dentistry, focuses on the dental care of infants, children, and teenagers, addressing their unique needs with a gentle, friendly, and preventive approach.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                From teething troubles and the first dental visit to cavity prevention, orthodontic assessments, and oral hygiene education, pediatric dentistry is designed to make dental care a positive and stress-free experience for both children and parents. Pediatric dentists are specially trained to handle young patients with care, using child-friendly techniques and environments to reduce anxiety and build trust.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                By encouraging regular check-ups and teaching good habits early, kids dentistry helps ensure your child's smile stays healthy, bright, and confident as they grow.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'oral-surgery') {
+                title.textContent = 'Oral Surgery Treatments';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Fractured jaw surgeries, tooth extraction and all other maxillofacial treatments
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Oral surgery encompasses a wide range of specialized procedures designed to diagnose and treat complex conditions affecting the teeth, jaws, gums, and facial structures. Whether it's the removal of impacted teeth, treatment of jaw disorders, or preparation for dental implants, oral surgery plays a vital role in restoring both function and oral health.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Performed by skilled professionals in a controlled, sterile environment, oral surgery treatments address issues that go beyond the scope of general dentistry. Common procedures include wisdom tooth extractions, bone grafting, cyst or tumor removal, and corrective jaw surgery, among others.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                With advanced techniques and modern anesthesia options, most oral surgeries today are safe, efficient, and offer quicker recovery times. These treatments not only resolve pain or structural problems but also support long-term dental stability and overall well-being.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (serviceType === 'wisdom-tooth') {
+                title.textContent = 'Wisdom Tooth Removal';
+                content.innerHTML = `
+                    <div style="line-height: 1.8; color: #333;">
+                        <p style="font-size: 1.1rem; font-weight: 600; color: #2B4B4A; margin-bottom: 1.5rem; text-align: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 1rem; border-radius: 10px; border-left: 4px solid #B28F56;">
+                            Safe surgical extraction of impacted third molars
+                        </p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Wisdom teeth, also known as third molars, are the last set of teeth to emerge—typically between the ages of 17 and 25. In many cases, these teeth do not have enough space to grow properly, leading to impaction, misalignment, pain, or infection. When this occurs, wisdom tooth removal becomes necessary to protect your oral health.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                Wisdom tooth extraction is a common and safe surgical procedure performed under local or general anesthesia, depending on the complexity of the case. Removing problematic wisdom teeth can prevent crowding, tooth decay, gum disease, and other complications that may affect neighboring teeth and jaw structures.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.7;">
+                                With modern techniques and proper post-operative care, recovery is typically smooth and comfortable—helping you maintain a healthy, pain-free smile.
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="#contact" onclick="closeServiceModal()" style="display: inline-block; background: linear-gradient(135deg, #2B4B4A, #B28F56); color: white; text-decoration: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(43, 75, 74, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(43, 75, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(43, 75, 74, 0.3)'">
+                                <i class="fas fa-calendar-plus" style="margin-right: 0.5rem;"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        
+        function closeServiceModal() {
+            const modal = document.getElementById('serviceModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('serviceModal');
+            if (event.target === modal) {
+                closeServiceModal();
+            }
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeServiceModal();
+            }
+        });
+    </script>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <!-- Call Button -->
+        <a href="tel:+918791362345" class="floating-btn call-btn" title="Call Now">
+            <i class="fas fa-phone"></i>
+        </a>
+        
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/918791362345" target="_blank" class="floating-btn whatsapp-btn" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        
+        <!-- Go to Top Button -->
+        <button class="floating-btn top-btn" id="goToTop" title="Go to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+</body>
+</html>
